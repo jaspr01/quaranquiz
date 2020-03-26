@@ -15,6 +15,7 @@ class CreateRoundsTable extends Migration
     {
         Schema::create('rounds', function (Blueprint $table) {
             $table->id();
+            $table->engine = 'InnoDB';
             $table->string('title');
             $table->string('description');
             $table->boolean('status');
@@ -22,9 +23,11 @@ class CreateRoundsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('questions', function($table) {
+        /** 
+        Schema::table('rounds', function($table) {
             $table->foreign('quiz_id')->references('id')->on('quizzes');
-        });
+        }); 
+        */
     }
 
     /**
