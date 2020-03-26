@@ -22,7 +22,7 @@ class CreateRoundsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('questions', function($table) {
+        Schema::table('rounds', function($table) {
             $table->foreign('quiz_id')->references('id')->on('quizzes');
         });
     }
