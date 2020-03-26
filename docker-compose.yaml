@@ -20,6 +20,10 @@ services:
     networks:
       - app-network
 
+  redis:
+    image: redis:4.0
+    ports:
+      - "6382:6379"
   #Nginx Service
   webserver:
     image: nginx:alpine
@@ -53,7 +57,7 @@ services:
       - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
-
+          
 #Docker Networks
 networks:
   app-network:
