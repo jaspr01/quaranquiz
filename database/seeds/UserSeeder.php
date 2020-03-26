@@ -11,16 +11,20 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        \App\User::make([
+        DB::table('users')->insert([
             'name' => 'Jasper Verschuere',
             'email' => 'verschuere.jasper@gmail.com',
             'password' => \Illuminate\Support\Facades\Hash::make('covid19'),
+            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ]);
 
-        \App\User::make([
+        DB::table('users')->insert([
             'name' => 'Tristan Hofman',
             'email' => 'hofmantristan@gmail.com',
             'password' => \Illuminate\Support\Facades\Hash::make('quaranquiz'),
+            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ]);
     }
 }

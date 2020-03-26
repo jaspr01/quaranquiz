@@ -11,16 +11,22 @@ class QuizSeeder extends Seeder
      */
     public function run()
     {
-        \App\Quiz::make([
+        DB::table('quizzes')->insert([
             'title' => 'Pré 48 UREN Quiz 2020',
+            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ]);
 
-        \App\Quiz::make([
+        DB::table('quizzes')->insert([
             'title' => 'Pré 48 UREN Quiz 2019',
+            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ]);
 
-        \App\Quiz::make([
+        DB::table('quizzes')->insert([
             'title' => 'Pré 48 UREN Quiz 2018',
+            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ]);
     }
 }
