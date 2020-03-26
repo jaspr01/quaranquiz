@@ -15,15 +15,17 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->engine = 'InnoDB';
             $table->string('title');
             $table->text('description');
             $table->integer('round_id')->unsigned();
             $table->timestamps();
         });
 
+        /** 
         Schema::table('questions', function($table) {
             $table->foreign('round_id')->references('id')->on('rounds');
-        });
+        }); */
     }
 
     /**

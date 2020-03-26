@@ -15,19 +15,22 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
+            $table->engine = 'InnoDB';
             $table->string('question');
             $table->integer('user_id')->unsigned();
             $table->integer('question_id')->unsigned();
             $table->timestamps();
         });
 
+        /** 
         Schema::table('answers', function($table) {
             $table->foreign('user_id')->references('id')->on('users');
-        });
-
+        });*/
+ 
+        /** 
         Schema::table('answers', function($table) {
             $table->foreign('question_id')->references('id')->on('questions');
-        });
+        }); */
     }
 
     /**
